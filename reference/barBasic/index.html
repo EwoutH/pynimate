@@ -14,7 +14,7 @@
       
         <link rel="canonical" href="https://julkaar9.github.io/reference/barBasic/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -100,8 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Pynimate" class="md-header__button md-logo" aria-label="Pynimate" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/pynimate_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -221,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../canvas/" class="md-tabs__link md-tabs__link--active">
         Api Reference
       </a>
     </li>
@@ -253,8 +252,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Pynimate" class="md-nav__button md-logo" aria-label="Pynimate" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/pynimate_logo.png" alt="logo">
 
     </a>
     Pynimate
@@ -415,6 +413,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1">
@@ -428,6 +428,20 @@
           Animators
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -490,15 +504,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.set_figure" class="md-nav__link">
-    set_figure()
+  <a href="#pynimate.bar.BarBasic.getTopXY" class="md-nav__link">
+    getTopXY()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.getTopXY" class="md-nav__link">
-    getTopXY()
+  <a href="#pynimate.bar.BarBasic.set_xylim" class="md-nav__link">
+    set_xylim()
   </a>
   
 </li>
@@ -583,20 +597,6 @@
         <li class="md-nav__item">
   <a href="#pynimate.bar.BarBasic.add_extras" class="md-nav__link">
     add_extras()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.animate" class="md-nav__link">
-    animate()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.save" class="md-nav__link">
-    save()
   </a>
   
 </li>
@@ -738,15 +738,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.set_figure" class="md-nav__link">
-    set_figure()
+  <a href="#pynimate.bar.BarBasic.getTopXY" class="md-nav__link">
+    getTopXY()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.getTopXY" class="md-nav__link">
-    getTopXY()
+  <a href="#pynimate.bar.BarBasic.set_xylim" class="md-nav__link">
+    set_xylim()
   </a>
   
 </li>
@@ -835,20 +835,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.animate" class="md-nav__link">
-    animate()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pynimate.bar.BarBasic.save" class="md-nav__link">
-    save()
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -899,7 +885,12 @@
           <td>
                 <code><span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
-          <td><p>The data to be prepared, should be in this format where time is set to index.</p></td>
+          <td><p>The data to be prepared, should be in this format where time is set to index.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Example:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;&gt;&gt; time  col1 col2 col3 ...
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&gt;&gt;&gt; 2012   1    0    2
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;&gt;&gt; 2013   2    3    1
+</code></pre></div></p></td>
           <td>
               <em>required</em>
           </td>
@@ -957,19 +948,20 @@
         <tr>
           <td><code>post_update</code></td>
           <td>
-                <code><span title="typing.Callable">Callable</span>[[<span title="matplotlib.pyplot">plt</span>.<span title="matplotlib.pyplot.Axes">Axes</span>, int, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], None], optional</code>
+                <code><span title="typing.Callable">Callable</span>[[<span title="matplotlib.pyplot">plt</span>.<span title="matplotlib.pyplot.Axes">Axes</span>, int, <a class="autorefs autorefs-internal" title="pynimate.datafier.Datafier" href="../datafier/#pynimate.datafier.Datafier">Datafier</a>, <span title="types.SimpleNamespace">SimpleNamespace</span>], None], optional</code>
           </td>
-          <td><p>callback function for additional customization,, by default None</p>
+          <td><p>callback function for additional customization, by default None</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>args:
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>plt.Axes: The matplotlib Axes used for the barplot
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>int: Current animation frame / dataframe row
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pd.DataFrame: The actual data
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pd.DataFrame: Dataframe containing bar ranks
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>example:
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>&gt;&gt;&gt; def post_update(ax, i, data, df_ranks):
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&gt;&gt;&gt;     # sets log scale for x-axis
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>&gt;&gt;&gt;     ax.set_xscale(&quot;log&quot;)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Datafier: The underlying datafier instance
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SimpleNamespace: Contains the following attributes -
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>bar_rank, bar_length, top_bars, bar_colors
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>example:
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&gt;&gt;&gt; def post_update(ax, i, datafier, bar_attr):
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>&gt;&gt;&gt;     # sets log scale for x-axis
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>&gt;&gt;&gt;     ax.set_xscale(&quot;log&quot;)
 </code></pre></div></td>
           <td>
                 <code>None</code>
@@ -1037,30 +1029,30 @@
         </tr>
     </tbody>
   </table>
-      <p>```
-    ip_frac is the percentage of NaN values to be linearly interpolated for column ranks</p>
-<div class="highlight"><pre><span></span><code>Consider this example
-&gt;&gt;&gt;               a    b
-&gt;&gt;&gt; date
-&gt;&gt;&gt; 2021-11-13  1.0  4.0
-&gt;&gt;&gt; 2021-11-14  NaN  NaN
-&gt;&gt;&gt; 2021-11-15  NaN  NaN
-&gt;&gt;&gt; 2021-11-16  NaN  NaN
-&gt;&gt;&gt; 2021-11-17  NaN  NaN
-&gt;&gt;&gt; 2021-11-18  2.0  6.0
-
-with ip_frac set to 0.5, 50% of NaN&#39;s will be linearly interpolated while
-
-the rest will back filled.
-
-&gt;&gt;&gt;                 a         b
-&gt;&gt;&gt; 2021-11-13  1.000000  4.000000  &lt;&lt; original value ---------------
-&gt;&gt;&gt; 2021-11-14  1.333333  4.666667                                   |
-&gt;&gt;&gt; 2021-11-15  1.666667  5.333333                                   |  50% linearly
-&gt;&gt;&gt; 2021-11-16  2.000000  6.000000  &lt;- linear interpolation          |  interpolated
-&gt;&gt;&gt; 2021-11-17  2.000000  6.000000      upto here                    |  rest are filled.
-&gt;&gt;&gt; 2021-11-18  2.000000  6.000000  &lt;&lt; original value (upper bound)--
-This adds some stability in the barChartRace and reduces constantly shaking of bars.```
+      <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    ip_frac is the percentage of NaN values to be linearly interpolated for column ranks
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Consider this example
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &gt;&gt;&gt;               a    b
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &gt;&gt;&gt; date
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &gt;&gt;&gt; 2021-11-13  1.0  4.0
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    &gt;&gt;&gt; 2021-11-14  NaN  NaN
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    &gt;&gt;&gt; 2021-11-15  NaN  NaN
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    &gt;&gt;&gt; 2021-11-16  NaN  NaN
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    &gt;&gt;&gt; 2021-11-17  NaN  NaN
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    &gt;&gt;&gt; 2021-11-18  2.0  6.0
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    with ip_frac set to 0.5, 50% of NaN&#39;s will be linearly interpolated while
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    the rest will back filled.
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    &gt;&gt;&gt;                 a         b
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    &gt;&gt;&gt; 2021-11-13  1.00  4.00  &lt;&lt; original value ---------------
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    &gt;&gt;&gt; 2021-11-14  1.33  4.67                                   |
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    &gt;&gt;&gt; 2021-11-15  1.67  5.33                                   |  50% linearly
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    &gt;&gt;&gt; 2021-11-16  2.00  6.00  &lt;- linear interpolation          |  interpolated
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    &gt;&gt;&gt; 2021-11-17  2.00  6.00      upto here                    |  rest are filled.
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    &gt;&gt;&gt; 2021-11-18  2.00  6.00  &lt;&lt; original value (upper bound)--
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    This adds some stability in the barChartRace and reduces constantly shaking of bars.
 </code></pre></div>
 
 
@@ -1088,7 +1080,8 @@ This adds some stability in the barChartRace and reduces constantly shaking of b
 
   <div class="doc doc-contents ">
   
-      <p>If colors is a list, length of colors should be equal to no of columns. If it is a dict, all columns should be mapped to a color.</p>
+      <p>If colors is a list, length of colors should be equal to no of <code>datafier.bar_colors</code>.
+If it is a dict, all columns of <code>datafier.top_cols</code> should be mapped to a color.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1122,68 +1115,6 @@ This adds some stability in the barChartRace and reduces constantly shaking of b
 
 
 
-<h2 id="pynimate.bar.BarBasic.set_figure" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">set_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>ets figure size, xlim and ylim. Additional kwargs ara passed to plt.subplots(**kwargs)</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>figsize</code></td>
-          <td>
-                <code>tuple[int, int], optional</code>
-          </td>
-          <td><p>plot figure size, by default (16, 9)</p></td>
-          <td>
-                <code>(16, 9)</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>xlim</code></td>
-          <td>
-                <code>list[float], optional</code>
-          </td>
-          <td><p>x axis limits in this format [min, max], by default [min, max + 5]</p></td>
-          <td>
-                <code>[]</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>ylim</code></td>
-          <td>
-                <code>list[float], optional</code>
-          </td>
-          <td><p>y axis limits in this format [min, max], by default [0.5, n_bars + 0.6]</p></td>
-          <td>
-                <code>[]</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h2 id="pynimate.bar.BarBasic.getTopXY" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">getTopXY</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code>
 
@@ -1193,7 +1124,7 @@ This adds some stability in the barChartRace and reduces constantly shaking of b
   <div class="doc doc-contents ">
   
       <p>Prepares top n_bar columns and their respective attributes such as position, length, colors.
-Not to be used outside animation update.</p>
+Not meant to be used outside animation update.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1230,9 +1161,61 @@ Not to be used outside animation update.</p>
     <tbody>
         <tr>
           <td>
-                <code>tuple</code>
+                <code><span title="types.SimpleNamespace">SimpleNamespace</span></code>
           </td>
-          <td><p>Bar locationn length, columns and their respective colors</p></td>
+          <td><p>Bar rank, length. Top columns and their respective colors</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pynimate.bar.BarBasic.set_xylim" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_xylim</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[])</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Sets figure size, xlim and ylim. Additional kwargs ara passed to plt.subplots(**kwargs)</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>xlim</code></td>
+          <td>
+                <code>list[float], optional</code>
+          </td>
+          <td><p>x axis limits in this format [min, max], by default [min, max + 5]</p></td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ylim</code></td>
+          <td>
+                <code>list[float], optional</code>
+          </td>
+          <td><p>y axis limits in this format [min, max], by default [0.5, n_bars + 0.6]</p></td>
+          <td>
+                <code>[]</code>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1410,14 +1393,14 @@ Not to be used outside animation update.</p>
 
 
 <h2 id="pynimate.bar.BarBasic.set_time" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">set_time</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.97</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.27</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">46</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#777777&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">set_time</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">datafier</span><span class="p">:</span> <span class="n">datafier</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.97</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.27</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">46</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#777777&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
   
-      <p><em>summary</em></p>
+      <p>Annotates the time in the plot and additional <code>kwargs</code> are passed to plt.text(**kwargs)</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1433,11 +1416,11 @@ Not to be used outside animation update.</p>
         <tr>
           <td><code>callback</code></td>
           <td>
-                <code><span title="typing.Callable">Callable</span>[[int, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>, list, any], str], optional</code>
+                <code><span title="typing.Callable">Callable</span>[[int, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], str], optional</code>
           </td>
-          <td><p>Callback function to customize the time text, by default <code>lambda i, data, time, rank: time[i]</code></p></td>
+          <td><p>Callback function to customize the time text, by default <code>lambda i, datafier: datafier.data.index[i]</code></p></td>
           <td>
-                <code>lambda i, data, time, rank: time[i]</code>
+                <code>lambda i, datafier: datafier.data.index[i]</code>
           </td>
         </tr>
         <tr>
@@ -1556,16 +1539,14 @@ overwrite them if you wish to use callbacks instead of texts in title or xlabel.
         <tr>
           <td><code>callback</code></td>
           <td>
-                <code><span title="typing.Callable">Callable</span>[[int, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>, list, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], str], optional</code>
+                <code><span title="typing.Callable">Callable</span>[[int, <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], str], optional</code>
           </td>
           <td><p>Callback function to customize the text, by default None</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Example:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;&gt;&gt; lambda i, data, time, rank: time[i]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;&gt;&gt; lambda i, datafier: datafier.data.index[i]
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>args:
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>i: Animation frame / data row index
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>data: The actual data
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>time: The time index, i.e data.index
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rank: Dataframe containing the bar rankings
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>datafier: The datafier instance
 </code></pre></div></td>
           <td>
                 <code>None</code>
@@ -2088,118 +2069,15 @@ See https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.patches.FancyBboxPatch.h
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>args:
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>plt.Axes: The matplotlib Axes used for the barplot
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>int: Current animation frame / dataframe row
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pd.DataFrame: The actual data
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pd.DataFrame: Dataframe containing bar ranks
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Example:
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>&gt;&gt;&gt; lambda ax, *args: ax.set_xcale(&quot;log)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Datafier: The underlying datafier instance
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SimpleNamespace: Contains the following attributes -
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>bar_rank, bar_length, top_bars, bar_colors
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Example:
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&gt;&gt;&gt; lambda ax, *args: ax.set_xcale(&quot;log)
 </code></pre></div></p></td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="pynimate.bar.BarBasic.animate" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">animate</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Main module to create the animation, additional <code>kwargs</code> are passed to animation.FuncAnimation(**kwargs)</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>interval</code></td>
-          <td>
-                <code>int, optional</code>
-          </td>
-          <td><p>Interval between each frame. Defaults to 50ms, by default 50</p></td>
-          <td>
-                <code>50</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="pynimate.bar.BarBasic.save" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Saves the current animation</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>filename</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>ilename</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>fps</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>Video fps / frames per second</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>extension</code></td>
-          <td>
-                <code>str, optional</code>
-          </td>
-          <td><p>File extension, by default "mp4"</p></td>
-          <td>
-                <code>&#39;gif&#39;</code>
           </td>
         </tr>
     </tbody>
@@ -2243,7 +2121,7 @@ See https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.patches.FancyBboxPatch.h
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../guide/customization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Customizations" rel="prev">
+        <a href="../canvas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Canvas" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2252,7 +2130,7 @@ See https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.patches.FancyBboxPatch.h
               <span class="md-footer__direction">
                 Previous
               </span>
-              Customizations
+              Canvas
             </div>
           </div>
         </a>
@@ -2280,7 +2158,7 @@ See https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.patches.FancyBboxPatch.h
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 julkar9
+      Copyright &copy; 2022 Md Julkarnaeen
     </div>
   
   

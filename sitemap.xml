@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://julkaar9.github.io/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://julkaar9.github.io/guide/customization/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://julkaar9.github.io/guide/starter/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://julkaar9.github.io/reference/barBasic/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://julkaar9.github.io/reference/canvas/</loc>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://julkaar9.github.io/reference/datafier/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://julkaar9.github.io/reference/utils/</loc>
-         <lastmod>2022-11-27</lastmod>
+         <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -14,7 +14,7 @@
       
         <link rel="canonical" href="https://julkaar9.github.io/guide/starter/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -100,8 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Pynimate" class="md-header__button md-logo" aria-label="Pynimate" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/pynimate_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -221,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../reference/barBasic/" class="md-tabs__link">
+      <a href="../../reference/canvas/" class="md-tabs__link">
         Api Reference
       </a>
     </li>
@@ -253,8 +252,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Pynimate" class="md-nav__button md-logo" aria-label="Pynimate" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/pynimate_logo.png" alt="logo">
 
     </a>
     Pynimate
@@ -387,6 +385,13 @@
         <li class="md-nav__item">
   <a href="#import" class="md-nav__link">
     Import
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    Canvas
   </a>
   
 </li>
@@ -542,6 +547,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_1">
@@ -555,6 +562,20 @@
           Animators
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/canvas/" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -704,6 +725,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    Canvas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-animations" class="md-nav__link">
     Basic Animations
   </a>
@@ -792,7 +820,7 @@
 
 
 <h1 id="welcome-to-pynimate">Welcome to pynimate</h1>
-<p>pynimate is a python package for statistical data animations.</p>
+<p>Pynimate is a python package for statistical data animations.</p>
 <h2 id="installation">Installation</h2>
 <h3 id="with-pip">with pip</h3>
 <p>You can install pynimate using <a href="https://pypi.org/project/pynimate/"><code>pip</code></a></p>
@@ -802,6 +830,9 @@
 <p>Pynimate is generally imported as <code>nim</code> and this convention is followed throughout the documentation.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">pynimate</span> <span class="k">as</span> <span class="nn">nim</span>
 </code></pre></div></p>
+<h2 id="canvas">Canvas</h2>
+<p>The Canvas class is used as a base for the animations, it handles the matplotlib figure, subplots
+as well as creating and saving animations.</p>
 <h2 id="basic-animations">Basic Animations</h2>
 <p>We will go through some basic data animations using pynimate.</p>
 <h2 id="bar-chart-race">Bar Chart Race</h2>
@@ -816,7 +847,7 @@ where the time column is set to index.
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="mi">2015</span>   <span class="mf">2.5</span>   <span class="mi">2</span>     <span class="mf">3.5</span>
 </code></pre></div></p>
 <h3 id="pandas-setup">Pandas setup</h3>
-<p>Use pandas to import your data and the time column to index.
+<p>Use pandas to import your data and set the time column as index.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="n">csv</span><span class="s1">&#39;).set_index(&#39;</span><span class="n">time</span><span class="s1">&#39;)</span>
 </code></pre></div></p>
@@ -882,13 +913,16 @@ know what the original values are between the actual intervals.  </p>
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="p">}</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1"># Interpolation frequency is 2 days</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="n">bar</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">BarBasic</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;2d&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="c1"># use set_time to draw the datetime in the canvas</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="c1"># here we are using a callback that returns datetime formatted in month, year</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">bar</span><span class="o">.</span><span class="n">set_time</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b, %Y&quot;</span><span class="p">))</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">bar</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">cnv</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1"># Interpolation frequency is 2 days</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">bar</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">BarBasic</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;2d&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="c1"># use set_time to draw the datetime in the canvas</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1"># here we are using a callback that returns datetime formatted in month, year</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">bar</span><span class="o">.</span><span class="n">set_time</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b, %Y&quot;</span><span class="p">))</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="c1"># add the bar plot to the canvas</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="n">cnv</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="n">cnv</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="save-the-animation">Save the animation</h3>
 <p>Use <code>BarBasic.save()</code> to save the animation</p>
@@ -972,7 +1006,7 @@ Use <code>BarBasic.save()</code> to save the animation
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 julkar9
+      Copyright &copy; 2022 Md Julkarnaeen
     </div>
   
   

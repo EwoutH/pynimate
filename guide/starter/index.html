@@ -419,8 +419,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#barbasic" class="md-nav__link">
-    BarBasic
+  <a href="#barplot" class="md-nav__link">
+    Barplot
   </a>
   
 </li>
@@ -583,8 +583,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/barBasic/" class="md-nav__link">
-        BarBasic
+      <a href="../../reference/barplot/" class="md-nav__link">
+        Barplot
       </a>
     </li>
   
@@ -754,8 +754,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#barbasic" class="md-nav__link">
-    BarBasic
+  <a href="#barplot" class="md-nav__link">
+    Barplot
   </a>
   
 </li>
@@ -836,7 +836,7 @@ as well as creating and saving animations.</p>
 <h2 id="basic-animations">Basic Animations</h2>
 <p>We will go through some basic data animations using pynimate.</p>
 <h2 id="bar-chart-race">Bar Chart Race</h2>
-<p>Create a Bar Chart Race using the <code>BarBasic</code> module.</p>
+<p>Create a Bar Chart Race using the <code>Barplot</code> module.</p>
 <p>Pandas is a dependency and used for data manipulation, your data have to be a pandas <code>DataFrame</code>.
 The data needs to be in the following format,<br />
 where the time column is set to index.
@@ -863,8 +863,8 @@ where the time column is set to index.
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="p">}</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 id="barbasic">BarBasic</h3>
-<p>BarBasic takes three required arguments.  <br />
+<h3 id="barplot">Barplot</h3>
+<p>Barplot takes three required arguments.  <br />
 <code>data</code>: The data to be plotted and animated<br />
 <code>time_format</code>: Time format is the date time format of the data index. In our case it is <code>"%Y-%m-%d"</code><br />
 <code>ip_freq</code>: Most data in their original form are not suitable for animations, Why?
@@ -896,7 +896,7 @@ The interpolation is mostly used to make the video smooth.  </p>
 <p>You might wonder whether this interpolation will misreprsent the plot. Considering there is no way to
 know what the original values are between the actual intervals.  </p>
 <p>That is something for the user to decide. If you a data large enough, you will not need interpolation.  </p>
-<p>Now that the fundamentals are discussed, use BarBasic to create the animation.<br />
+<p>Now that the fundamentals are discussed, use Barplot to create the animation.<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># import matplotlib if you wish to see the animation in gui</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -915,7 +915,7 @@ know what the original values are between the actual intervals.  </p>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">cnv</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1"># Interpolation frequency is 2 days</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">bar</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">BarBasic</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;2d&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">bar</span> <span class="o">=</span> <span class="n">nim</span><span class="o">.</span><span class="n">Barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;2d&quot;</span><span class="p">)</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="c1"># use set_time to draw the datetime in the canvas</span>
 <a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1"># here we are using a callback that returns datetime formatted in month, year</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">bar</span><span class="o">.</span><span class="n">set_time</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b, %Y&quot;</span><span class="p">))</span>
@@ -925,7 +925,7 @@ know what the original values are between the actual intervals.  </p>
 <a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="save-the-animation">Save the animation</h3>
-<p>Use <code>BarBasic.save()</code> to save the animation</p>
+<p>Use <code>Barplot.save()</code> to save the animation</p>
 <h4 id="as-gif">As GIF</h4>
 <p>Matplotlib uses pillow under the hood to save gifs, however you can use writer of your choice.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">bar</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;gif&quot;</span><span class="p">)</span>
@@ -937,8 +937,8 @@ know what the original values are between the actual intervals.  </p>
 or 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">conda</span> <span class="n">install</span> <span class="n">ffmpeg</span>
 </code></pre></div>
-Use <code>BarBasic.save()</code> to save the animation
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">bar</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="mi">24</span> <span class="p">,</span><span class="s2">&quot;mp4&quot;</span><span class="p">)</span>
+Use <code>Canvas.save()</code> to save the animation
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">cnv</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="mi">24</span> <span class="p">,</span><span class="s2">&quot;mp4&quot;</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="result">Result!</h2>
 <p><img alt="" src="../../assets/example2.gif" /></p>

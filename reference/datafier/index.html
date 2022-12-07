@@ -48,16 +48,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -713,7 +703,13 @@
 
 
   
-      <p>Contains data preparation modules, which includes interpolation, rank generation, color_generation</p>
+      <p>Contains data preparation modules, which includes interpolation, rank generation, color_generation.
+data should be in this format where time is set to index
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    Example:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &gt;&gt;&gt; time  col1 col2 col3 ...
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &gt;&gt;&gt; 2012   1    0    2
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &gt;&gt;&gt; 2013   2    3    1
+</code></pre></div></p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -731,12 +727,7 @@
           <td>
                 <code><span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
-          <td><p>The data to be prepared, should be in this format where time is set to index.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Example:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;&gt;&gt; time  col1 col2 col3 ...
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&gt;&gt;&gt; 2012   1    0    2
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;&gt;&gt; 2013   2    3    1
-</code></pre></div></p></td>
+          <td><p>The data to be prepared, should be in this format where time is set to index</p></td>
           <td>
               <em>required</em>
           </td>
@@ -776,7 +767,7 @@
           <td>
                 <code>int, optional</code>
           </td>
-          <td><p>Number of bars to be visible on the plot Defaults to 10 or less, by default 10</p></td>
+          <td><p>Number of bars to be visible on the plot, by default 10 or less</p></td>
           <td>
                 <code>10</code>
           </td>
@@ -786,38 +777,39 @@
           <td>
                 <code>list[str], optional</code>
           </td>
-          <td><p>List of color palettes to generate bar
-colors. Defaults to ["viridis"], by default ["viridis"]</p></td>
+          <td><p>List of color palettes to generate bar colors, by default ["viridis"]</p></td>
           <td>
                 <code>[&#39;viridis&#39;]</code>
           </td>
         </tr>
     </tbody>
   </table>
-      <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    ip_frac is the percentage of NaN values to be linearly interpolated
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Consider this example
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &gt;&gt;&gt;               a    b
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &gt;&gt;&gt; date
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &gt;&gt;&gt; 2021-11-13  1.0  4.0
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    &gt;&gt;&gt; 2021-11-14  NaN  NaN
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    &gt;&gt;&gt; 2021-11-15  NaN  NaN
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    &gt;&gt;&gt; 2021-11-16  NaN  NaN
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    &gt;&gt;&gt; 2021-11-17  NaN  NaN
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    &gt;&gt;&gt; 2021-11-18  2.0  6.0
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    with ip_frac set to 0.5, 50% of NaN&#39;s will be linearly interpolated while
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    the rest will back filled.
+      <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    ip_frac is the percentage of NaN values to be linearly
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    interpolated for column ranks
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Consider this example
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &gt;&gt;&gt;               a    b
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &gt;&gt;&gt; date
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    &gt;&gt;&gt; 2021-11-13  1.0  4.0
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    &gt;&gt;&gt; 2021-11-14  NaN  NaN
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    &gt;&gt;&gt; 2021-11-15  NaN  NaN
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    &gt;&gt;&gt; 2021-11-16  NaN  NaN
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    &gt;&gt;&gt; 2021-11-17  NaN  NaN
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    &gt;&gt;&gt; 2021-11-18  2.0  6.0
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    with ip_frac set to 0.5, 50% of NaN&#39;s will be linearly
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    interpolated while the rest will back filled.
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    &gt;&gt;&gt;               a    b
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    &gt;&gt;&gt; 2021-11-13  1.00  4.000  &lt;&lt; original value ---------------
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    &gt;&gt;&gt; 2021-11-14  1.33  4.67                                   |
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    &gt;&gt;&gt; 2021-11-15  1.67  5.33                                   |  50% linearly
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    &gt;&gt;&gt; 2021-11-16  2.00  6.00  &lt;- linear interpolation          |  interpolated
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    &gt;&gt;&gt; 2021-11-17  2.00  6.00      upto here                    |  rest are filled.
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    &gt;&gt;&gt; 2021-11-18  2.00  6.00  &lt;&lt; original value (upper bound)--
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    This adds some stability in the barChartRace and reduces constantly shaking of bars.
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    &gt;&gt;&gt;              a      b
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    &gt;&gt;&gt; 2021-11-13  1.00  4.00  &lt;&lt; original value --------
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    &gt;&gt;&gt; 2021-11-14  1.33  4.67                            |
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    &gt;&gt;&gt; 2021-11-15  1.67  5.33                            |  50% linearly
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    &gt;&gt;&gt; 2021-11-16  2.00  6.00  &lt;- linear interpolation   |  interpolated
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    &gt;&gt;&gt; 2021-11-17  2.00  6.00      upto here             |  rest are filled.
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    &gt;&gt;&gt; 2021-11-18  2.00  6.00  &lt;&lt; original value---------
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    This adds some stability in the barChartRace
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    and reduces constantly shaking of bars.
 </code></pre></div>
 
 
@@ -981,7 +973,7 @@ Column wise data format: The index should be equal to the columns of the actual 
 
   <div class="doc doc-contents ">
   
-      <p>Selects columns that a rank &lt; n_bars in any timestamp</p>
+      <p>Selects columns where column_rank &lt; n_bars in any timestamp</p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1049,8 +1041,6 @@ Column wise data format: The index should be equal to the columns of the actual 
 
 </div>
 
-
-  
 
 
 
